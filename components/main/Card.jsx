@@ -1,8 +1,10 @@
 import React from "react";
+import Timer from "./Timer";
+import StarIcon from "./StarIcon";
 
 const Card = () => {
   return (
-    <div className="relative bg-white shadow-md rounded-lg overflow-hidden">
+    <div className="relative overflow-hidden">
       {/* Favorite Icon */}
       <div className="absolute top-2 right-2 flex items-center space-x-2">
         <div className="flex items-center space-x-1">
@@ -47,13 +49,24 @@ const Card = () => {
             alt="2022 Lotus Exige Sport 420 Final Edition Thumbnail"
             className="w-full h-auto object-cover"
           />
-          <div className="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 rounded-md">
-            <span className="text-sm">Reserve Lowered</span>
+          <div className="absolute top-2 p-4 w-[100%]">
+            <div className="flex justify-between items-center">
+              <div className=" bg-gray-800 text-black pl-2 py-1">
+                <span className="bg-white px-2 py-2 text-sm">
+                  Reserve Lowered
+                </span>
+              </div>
+              <div className=" bg-gray-800 text-black px-2 py-1">
+                <span className="">
+                  <StarIcon />
+                </span>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Car Details */}
-        <div className="absolute bottom-20 p-4">
+        <div className="absolute bottom-20 p-4 w-[100%]">
           <div className="flex justify-between items-center">
             <div>
               <span className="text-sm text-gray-500">2022</span>
@@ -63,9 +76,10 @@ const Card = () => {
               </span>
             </div>
             <div>
-              <span className="text-sm text-gray-500">Location:</span>
-              <span className="text-sm font-semibold">
-                Abu Dhabi, United Arab Emirates
+              <span className="text-sm font-semibold text-end">
+                <p>Abu Dhabi</p>
+                <p>United Arab</p>
+                <p>Emirates</p>
               </span>
             </div>
           </div>
@@ -73,14 +87,15 @@ const Card = () => {
       </a>
 
       {/* Car Content - Price and Time */}
-      <div className="px-4 pb-4 flex justify-between items-center">
+      <div className="px-4 py-4 flex justify-between items-center">
         <div className="text-sm font-semibold text-gray-800">
           <label className="block text-gray-500">Latest bid</label>
           <span className="block text-lg text-gray-900">US$75,000</span>
         </div>
         <div className="text-sm font-semibold text-gray-800">
           <label className="block text-gray-500">Time left</label>
-          <span className="block text-lg text-gray-900">05:12:22</span>
+
+          <Timer />
         </div>
       </div>
     </div>
