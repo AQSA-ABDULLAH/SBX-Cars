@@ -1,23 +1,18 @@
 import { RxCross2 } from "react-icons/rx";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md"; 
 
 const PromotionSection = () => {
   return (
     <div>
-      <section className="px-4 py-2 flex items-center bg-[#ad9d6f] min-h-[36px]">
-        <div className=" flex-1 justify-center">
+      <section className="px-4 py-2 flex items-center bg-[#ad9d6f] text-white font-medium min-h-[36px]">
+        <div className="flex flex-1 justify-center align-center">
           <a
             className="promotion-link flex items-center space-x-2"
             href="https://sbxcars.com/sell-your-vehicle"
           >
-            <span className="text-lg font-semibold">SELL YOUR SUPERCAR</span>
+            <span className="text-[16px]">SELL YOUR SUPERCAR</span>
             <div className="image-wrapper">
-            
-              {/* <Image
-                src="/Assets/Icons/arrow-right-strong.svg"
-                alt="Arrow Right"
-                width={24}
-                height={24}
-              /> */}
+            <MdOutlineKeyboardArrowRight />
             </div>
           </a>
         </div>
