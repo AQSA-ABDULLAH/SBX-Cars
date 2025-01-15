@@ -26,10 +26,10 @@ const Slider = () => {
   };
 
   return (
-    <div className="text-white bg-white w-full">
+    <div className="text-white bg-white w-full px-4">
       {/* Background Image Carousel */}
       <div
-        className="h-[350px] md:h-[450px] bg-cover bg-center relative"
+        className="h-[460px] bg-cover bg-center relative"
         style={{
           backgroundImage: `url(${images[currentImageIndex]})`,
         }}
@@ -39,37 +39,44 @@ const Slider = () => {
       </div>
 
       {/* Navigation Buttons */}
-      <div className="absolute top-1/2 left-6 transform -translate-y-1/2">
+      <div className="absolute bottom-[12rem] left-16 transform -translate-y-1/2">
         <button className="rounded-full text-white" onClick={prevImage}>
           <img src="/assets/Path2.png" alt="previous-button" />
         </button>
       </div>
-      <div className="absolute top-1/2 right-6 transform -translate-y-1/2">
+      <div className="absolute bottom-[12rem] right-16 transform -translate-y-1/2">
         <button className="rounded-full text-white" onClick={nextImage}>
           <img src="/assets/Path1.png" alt="next-button" />
         </button>
       </div>
 
-      {/* Circular Progress Bar and Price */}
-      <div className="absolute bottom-14 flex justify-between w-full px-6">
-        <div className="flex flex-col">
-          <div className="flex justify-between text-white">
-            <p className="text-[10px] md:text-[14px] tracking-widest">£5,000,000 GBP</p>
-            <img src="/assets/g12.png" alt="logo" className="px-1 w-16 md:w-20" />
+      <div className="absolute bottom-8 w-[97.5%] px-[50px]">
+        <div className="flex justify-between items-end">
+          <div className="text-[#FFFFFFB3] uppercase font-400 leading-[40px]">
+            <span className="text-[28px]">2018</span>
+            <h3 className="text-[40px]">ASTON MARTES</h3>
+            <span className="text-[16px]">Bronco Development Vehicle 001</span>
           </div>
+          <div>
+            <button className="bg-[#f0f0f0] text-[#656565] px-[35px] py-[16px]">
+              BID NOW
+            </button>
+          </div>
+        </div>
+      </div>
 
-          {/* Slide Indicators */}
-          <div className="flex justify-center mt-4">
-            {images.map((_, index) => (
-              <span
-                key={index}
-                onClick={() => setCurrentImageIndex(index)}
-                className={`cursor-pointer mx-1 h-0.5 w-6 md:w-8 ${
-                  index === currentImageIndex ? "bg-gold" : "bg-gray-400"
-                }`}
-              ></span>
-            ))}
-          </div>
+      {/* Slide Indicators */}
+      <div className="absolute bottom-1 px-[50px]">
+        <div className="flex justify-center mt-4">
+          {images.map((_, index) => (
+            <span
+              key={index}
+              onClick={() => setCurrentImageIndex(index)}
+              className={`cursor-pointer mx-1 h-1 w-6 md:w-9 ${
+                index === currentImageIndex ? "bg-white" : "bg-gray-500"
+              }`}
+            ></span>
+          ))}
         </div>
       </div>
     </div>
@@ -77,4 +84,3 @@ const Slider = () => {
 };
 
 export default Slider;
-

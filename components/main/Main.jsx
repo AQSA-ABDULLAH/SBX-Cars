@@ -3,7 +3,7 @@ import Card from './Card'
 
 function Main() {
   return (
-    <div>
+    <div className='py-20'>
         <section></section>
         <section className="grid grid-cols-3 gap-8 row-gap-4 px-8">
             <Card />
