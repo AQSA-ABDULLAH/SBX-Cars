@@ -1,63 +1,74 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 function NewsletterForm() {
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubscribe = async () => {
     setIsSubmitting(true);
-    setMessage('');
+    setMessage("");
 
     if (!email) {
-      setMessage('Please enter a valid email.');
+      setMessage("Please enter a valid email.");
       setIsSubmitting(false);
       return;
     }
 
     // Simulating an API call or form submission
     setTimeout(() => {
-      setMessage('Thank you for subscribing!');
+      setMessage("Thank you for subscribing!");
       setIsSubmitting(false);
     }, 2000);
   };
 
   return (
-    <div className="col-12 col-md-6 col-xl-5">
-      <p className="text-lg font-medium mb-4">Get the latest updates by subscribing to our newsletter.</p>
+    <div>
+      <p className="text-[1rem] leading-6 text-[#515151] font-medium mb-[1rem]">
+        Get the latest updates by subscribing to our newsletter.
+      </p>
 
-      <div className="newsletter-form">
-        <div className="form-floating flex items-center relative gap-3">
-          <div className="input-wrapper">
+      <div>
+        <div className="form-floating flex items-center relative gap-[1rem] tracking-[1px]">
+          <div className="">
             <input
               type="email"
               id="newsletter"
-              className="form-control py-2 px-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="py-[16px] px-[14px] border border-[#ddd] color-[#101010] font-[1rem] focus:outline-none focus:bg-[#efefef] focus:border-[#8f8e8e]"
               placeholder="Email Address"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <label htmlFor="newsletter" className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">
-              Email Address
-            </label>
           </div>
 
           <button
             type="button"
             onClick={handleSubscribe}
-            className={`base-button py-2 px-4 rounded-lg text-white ${isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'}`}
+            className={`base-button py-[16px] px-[35px] text-[#656565] ${
+              isSubmitting
+                ? "bg-[#f0f0f0]"
+                : "bg-[#efefef] hover:bg-[#e0e0e0] cursor-pointer"
+            }`}
             disabled={isSubmitting}
           >
-            {isSubmitting ? 'Subscribing...' : 'Subscribe'}
+            {isSubmitting ? "Subscribing..." : "Subscribe"}
           </button>
         </div>
 
         {message && (
           <div
-            className={`mt-4 ${message.includes('Thank you') ? 'text-green-500' : 'text-red-500'}`}
-            id={message.includes('Thank you') ? 'newsletter-success' : message.includes('valid') ? 'newsletter-validation' : 'newsletter-error'}
+            className={`mt-4 ${
+              message.includes("Thank you") ? "text-green-500" : "text-red-500"
+            }`}
+            id={
+              message.includes("Thank you")
+                ? "newsletter-success"
+                : message.includes("valid")
+                ? "newsletter-validation"
+                : "newsletter-error"
+            }
           >
             {message}
           </div>

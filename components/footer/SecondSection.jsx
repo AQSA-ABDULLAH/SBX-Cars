@@ -2,124 +2,56 @@ import React from "react";
 import Link from "next/link";
 import NewsletterForm from "./NewsletterSection";
 
+const links1 = [
+  { href: "/", label: "Auctions" },
+  { href: "/brands", label: "Brands" },
+  { href: "/sell-your-vehicle", label: "Sell your vehicle" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/contact-us", label: "Contact us" },
+  { href: "/results", label: "Auction Results" },
+];
+
+const links2 = [
+  { href: "/about-us", label: "About us" },
+  { href: "/team", label: "Team" },
+  { href: "/careers", label: "Careers" },
+  { href: "/terms-of-service", label: "Terms of use" },
+  { href: "/privacy-policy", label: "Privacy policy" },
+  { href: "/cookie-declaration", label: "Cookie declaration" },
+];
+
 function SecondSection() {
+  const renderLinks = (links) =>
+    links.map(({ href, label }) => (
+      <li key={href} className="">
+        <Link href={href} className="hover:text-[#2b2a2a]">
+          {label}
+        </Link>
+      </li>
+    ));
+
   return (
     <div>
-      <div className="row justify-between footer-navbar items-center">
-        {/* FIRST SECTION */}
-        <div className="col-12 col-md-6 col-xl-5">
-            <NewsletterForm />
+      <div className="flex justify-between items-center">
+        {/* First Section */}
+        <div className="w-1/2">
+          <NewsletterForm />
         </div>
 
-        {/* SECOND SECTION */}
-        <div className="col-12 col-md-6 col-lg-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8 bg-gray-100">
-
+        {/* Second Section */}
+        <div className="w-1/2">
+          <div className="flex">
             {/* First Column */}
-            <div className="footer-nav-container">
-              <ul className="space-y-4">
-                <li className="footer-nav-link">
-                  <Link
-                    href="/auctions"
-                    className="nav-link text-gray-700 hover:text-blue-600"
-                  >
-                    Auctions
-                  </Link>
-                </li>
-                <li className="footer-nav-link">
-                  <Link
-                    href="/brands"
-                    className="nav-link text-gray-700 hover:text-blue-600"
-                  >
-                    Brands
-                  </Link>
-                </li>
-                <li className="footer-nav-link">
-                  <Link
-                    href="/sell-your-vehicle"
-                    className="nav-link text-gray-700 hover:text-blue-600"
-                  >
-                    Sell your vehicle
-                  </Link>
-                </li>
-                <li className="footer-nav-link">
-                  <Link
-                    href="/faq"
-                    className="nav-link text-gray-700 hover:text-blue-600"
-                  >
-                    FAQ
-                  </Link>
-                </li>
-                <li className="footer-nav-link">
-                  <Link
-                    href="/contact-us"
-                    className="nav-link text-gray-700 hover:text-blue-600"
-                  >
-                    Contact us
-                  </Link>
-                </li>
-                <li className="footer-nav-link">
-                  <Link
-                    href="/results"
-                    className="nav-link text-gray-700 hover:text-blue-600"
-                  >
-                    Auction Results
-                  </Link>
-                </li>
+            <div className="w-1/2">
+              <ul className="space-y-[7px] text-[#515151] list-disc">
+                {renderLinks(links1)}
               </ul>
             </div>
 
             {/* Second Column */}
-            <div className="footer-nav-container">
-              <ul className="space-y-4">
-                <li className="footer-nav-link">
-                  <Link
-                    href="/about-us"
-                    className="nav-link text-gray-700 hover:text-blue-600"
-                  >
-                    About us
-                  </Link>
-                </li>
-                <li className="footer-nav-link">
-                  <Link
-                    href="/team"
-                    className="nav-link text-gray-700 hover:text-blue-600"
-                  >
-                    Team
-                  </Link>
-                </li>
-                <li className="footer-nav-link">
-                  <Link
-                    href="/careers"
-                    className="nav-link text-gray-700 hover:text-blue-600"
-                  >
-                    Careers
-                  </Link>
-                </li>
-                <li className="footer-nav-link">
-                  <Link
-                    href="/terms-of-service"
-                    className="nav-link text-gray-700 hover:text-blue-600"
-                  >
-                    Terms of use
-                  </Link>
-                </li>
-                <li className="footer-nav-link">
-                  <Link
-                    href="/privacy-policy"
-                    className="nav-link text-gray-700 hover:text-blue-600"
-                  >
-                    Privacy policy
-                  </Link>
-                </li>
-                <li className="footer-nav-link">
-                  <Link
-                    href="/cookie-declaration"
-                    className="nav-link text-gray-700 hover:text-blue-600"
-                  >
-                    Cookie declaration
-                  </Link>
-                </li>
+            <div className="w-1/2">
+              <ul className="space-y-[7px] text-[#515151] list-disc">
+                {renderLinks(links2)}
               </ul>
             </div>
           </div>
@@ -130,3 +62,4 @@ function SecondSection() {
 }
 
 export default SecondSection;
+

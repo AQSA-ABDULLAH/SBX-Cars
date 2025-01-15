@@ -1,18 +1,18 @@
-import React from 'react';
-import SecondSection from './SecondSection';
-import FirstSection from './FirstSection';
+import React from "react";
+import SecondSection from "./SecondSection";
+import FirstSection from "./FirstSection";
 
 function Footer() {
   return (
     <div className="mt-[-1px] bg-white border-t border-solid border-[#efefef]">
       <section className="py-[50px] px-[20px]">
-        <div className="flex flex-row justify-content-between align-items-center">
+        <div className="flex flex-row justify-between items-center">
           <div className="w-[25%]">
             <FirstSection />
           </div>
 
           {/* SECOND SECTION */}
-          <div className="w-[25%]">
+          <div className="w-[75%]">
             <SecondSection />
           </div>
         </div>

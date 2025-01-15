@@ -1,118 +1,74 @@
-import React from 'react'
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
 function FirstSection() {
-  return (
-    <div className="social-container pb-4 sm:pb-5 md:pb-0">
-    <div className="wrapper">
-      {/* Logo */}
-      <a href="/" aria-label="SBX Cars">
-        <div className="image-wrapper logo">
-          <Image
-            src="/assets/logo.svg"
-            alt="SBX Cars"
-            width={150} // Adjust the width based on your needs
-            height={50} // Adjust the height based on your needs
-          />
-        </div>
-      </a>
+  const socialLinks = [
+    {
+      href: "https://www.facebook.com/sbxcars/",
+      src: "/assets/facebook.svg",
+      alt: "Facebook",
+    },
+    {
+      href: "https://www.instagram.com/sbxcars/",
+      src: "/assets/instagram.svg",
+      alt: "Instagram",
+    },
+    {
+      href: "https://www.youtube.com/channel/UCBfskSqX-sx9QLDH_uFkQ_A",
+      src: "/assets/youtube.svg",
+      alt: "YouTube",
+    },
+    {
+      href: "https://twitter.com/sbxcars",
+      src: "/assets/twitter-x.svg",
+      alt: "Twitter",
+    },
+    {
+      href: "https://www.tiktok.com/@sbxcars",
+      src: "/assets/tiktok.svg",
+      alt: "TikTok",
+    },
+    {
+      href: "https://www.linkedin.com/company/sbx-cars/",
+      src: "/assets/linkedin.svg",
+      alt: "LinkedIn",
+    },
+  ];
 
-      {/* Social Media Links */}
-      <div className="social-media-container flex space-x-4 mt-4">
-        <a
-          className="social-link"
-          href="https://www.facebook.com/sbxcars/"
-          target="_blank"
-          rel="nofollow"
-        >
-          <div className="image-wrapper grayscale">
-            <Image
-              src="/Assets/Icons/Social/facebook.svg"
-              alt="Facebook"
-              width={30}
-              height={30}
+  return (
+    <div className="flex pb-4 sm:pb-5 md:pb-0">
+      <div className="wrapper">
+        {/* Logo */}
+        <a href="/" className="font-semibold text-[#101010]">
+          <div className="image-wrapper logo">
+            <img
+              src="/assets/logo.svg"
+              alt="SBX Cars"
+              className="h-[46px] w-auto"
             />
           </div>
         </a>
-        <a
-          className="social-link"
-          href="https://www.instagram.com/sbxcars/"
-          target="_blank"
-          rel="nofollow"
-        >
-          <div className="image-wrapper">
-            <Image
-              src="/Assets/Icons/Social/instagram.svg"
-              alt="Instagram"
-              width={30}
-              height={30}
-            />
-          </div>
-        </a>
-        <a
-          className="social-link"
-          href="https://www.youtube.com/channel/UCBfskSqX-sx9QLDH_uFkQ_A"
-          target="_blank"
-          rel="nofollow"
-        >
-          <div className="image-wrapper">
-            <Image
-              src="/Assets/Icons/Social/youtube.svg"
-              alt="YouTube"
-              width={30}
-              height={30}
-            />
-          </div>
-        </a>
-        <a
-          className="social-link"
-          href="https://twitter.com/sbxcars"
-          target="_blank"
-          rel="nofollow"
-        >
-          <div className="image-wrapper">
-            <Image
-              src="/Assets/Icons/Social/twitter-x.svg"
-              alt="Twitter"
-              width={30}
-              height={30}
-            />
-          </div>
-        </a>
-        <a
-          className="social-link"
-          href="https://www.tiktok.com/@sbxcars"
-          target="_blank"
-          rel="nofollow"
-        >
-          <div className="image-wrapper">
-            <Image
-              src="/Assets/Icons/Social/tiktok.svg"
-              alt="TikTok"
-              width={30}
-              height={30}
-            />
-          </div>
-        </a>
-        <a
-          className="social-link"
-          href="https://www.linkedin.com/company/sbx-cars/"
-          target="_blank"
-          rel="nofollow"
-        >
-          <div className="image-wrapper">
-            <Image
-              src="/Assets/Icons/Social/linkedin.svg"
-              alt="LinkedIn"
-              width={30}
-              height={30}
-            />
-          </div>
-        </a>
+
+        {/* Social Media Links */}
+        <div className="flex mt-8 gap-6 justify-center items-center w-full">
+          {socialLinks.map(({ href, src, alt }) => (
+            <a
+              key={href}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-pointer no-underline font-semibold text-[#101010]"
+            >
+              <div className="w-6 grayscale opacity-30 hover:opacity-100">
+                <Image src={src} alt={alt} width={30} height={30} />
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
     </div>
-  </div>
-  )
+  );
 }
 
-export default FirstSection
+export default FirstSection;
+
