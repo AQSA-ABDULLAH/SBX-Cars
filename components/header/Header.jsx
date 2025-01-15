@@ -10,6 +10,7 @@ function Header() {
         <PromotionSection />
         <ContactMenu />
         <Navbar />
+        <div className='border-b'> </div>
         <BottomNavbar />
     </div>
   )

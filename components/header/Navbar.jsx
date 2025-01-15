@@ -15,7 +15,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="p-5 py-0 grid grid-cols-[repeat(3,_minmax(0,_1fr))] gap-4 justify-center items-center relative w-full transition-all duration-300">
+    <nav className="font-[16px] px-[16px] py-[20px] grid grid-cols-[repeat(3,_minmax(0,_1fr))] gap-4 justify-center items-center relative w-full transition-all duration-300">
       {/* Mobile Menu Button */}
       <div
         className="mobile-nav-button"
@@ -47,9 +47,9 @@ const Navbar = () => {
       </div>
 
       {/* Logo */}
-      <div className="flex justify-center md:justify-start flex-grow">
+      <div className="flex justify-center flex-grow">
         <Link href="/">
-          <img src="/assets/logo.svg" alt="logo" />
+          <img src="/assets/logo.svg" alt="logo" className="w-[15rem]"/>
         </Link>
       </div>
 
