@@ -2,16 +2,16 @@ import React from "react";
 import Timer from "./Timer";
 import StarIcon from "./StarIcon";
 
-const Card = ({ imageUrl, carName, carYear, carDetails }) => {
+const Card = ({
+  imageUrl,
+  carName,
+  carYear,
+  carDetails,
+  reserved,
+  favorite,
+}) => {
   return (
     <div className="relative overflow-hidden">
-      {/* <div className="absolute top-2 right-2 flex items-center space-x-2">
-        <div className="flex items-center space-x-1">
-
-          <span className="text-white">43</span>
-        </div>
-      </div> */}
-
       {/* Car Image and Link */}
       <a
         href="/listing/217/2022-lotus-exige-sport-420-final-edition"
@@ -24,20 +24,27 @@ const Card = ({ imageUrl, carName, carYear, carDetails }) => {
             className="w-full h-auto object-cover"
           />
 
-          {/* Favorite Icon */}
+          {/* Top Section: Reserve and Favorite */}
           <div className="absolute top-2 p-4 w-[100%]">
             <div className="flex justify-between items-center">
-              <div className=" bg-gray-800 text-black pl-2 py-1">
-                <span className="bg-white px-2 py-2 text-sm">
-                  Reserve Lowered
-                </span>
-              </div>
-              <div className=" bg-gray-800 text-black px-2 py-2 rounded-3xl">
+              {/* Conditional Rendering for Reserve Lowered */}
+              {reserved === 1 ? (
+                <div className="bg-gray-800 text-black pl-2 py-1">
+                  <span className="bg-white px-2 py-2 text-sm">
+                    Reserve Lowered
+                  </span>
+                </div>
+              ) : (
+                <span></span>
+              )}
+
+              {/* Favorite Count */}
+              <div className="bg-gray-800 text-black px-2 py-2 rounded-3xl">
                 <div className="flex items-center space-x-2">
                   <span className="">
                     <StarIcon />
                   </span>
-                  <span className="text-white text-[15px]">43</span>
+                  <span className="text-white text-[15px]">{favorite}</span>
                 </div>
               </div>
             </div>
@@ -52,8 +59,24 @@ const Card = ({ imageUrl, carName, carYear, carDetails }) => {
               <h3 className="text-xl font-bold">{carName}</h3>
               <span className="text-sm text-gray-500">{carDetails}</span>
             </div>
+            <div>
+              <span className="text-sm font-semibold text-end">
+                <p>Abu Dhabi</p>
+                <p>United Arab</p>
+                <p>Emirates</p>
+              </span>
+            </div>
           </div>
         </div>
+        {/* <div className="absolute bottom-20 p-4 w-[100%]">
+          <div className="flex justify-between items-center">
+            <div>
+              <span className="text-sm text-gray-500">{carYear}</span>
+              <h3 className="text-xl font-bold">{carName}</h3>
+              <span className="text-sm text-gray-500">{carDetails}</span>
+            </div>
+          </div>
+        </div> */}
       </a>
 
       {/* Car Content - Price and Time */}

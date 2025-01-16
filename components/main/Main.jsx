@@ -8,7 +8,7 @@ const cars = [
     carName: "Lotus Exige",
     carYear: "2022",
     carDetails: "Sport 420 Final Edition",
-    Reserved: 1,
+    reserved: 1,
     favorite: 43
   },
   {
@@ -17,7 +17,7 @@ const cars = [
     carName: "Porsche 911",
     carYear: "2021",
     carDetails: "Turbo S",
-    Reserved: 0,
+    reserved: 0,
     favorite: 87
   },
   {
@@ -26,7 +26,7 @@ const cars = [
     carName: "Ferrari F8",
     carYear: "2020",
     carDetails: "Tributo",
-    Reserved: 0,
+    reserved: 0,
     favorite: 48
   },
   {
@@ -35,7 +35,7 @@ const cars = [
     carName: "Lamborghini Huracan",
     carYear: "2019",
     carDetails: "Evo AWD",
-    Reserved: 1,
+    reserved: 1,
     favorite: 23
   },
 ];
@@ -51,6 +51,8 @@ function Main() {
             carName={car.carName}
             carYear={car.carYear}
             carDetails={car.carDetails}
+            reserved={car.reserved}
+            favorite={car.favorite}
           />
         ))}
       </section>
