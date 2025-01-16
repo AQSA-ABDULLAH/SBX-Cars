@@ -51,10 +51,10 @@ const Hero = () => {
   const { image, year, name, model } = carData[currentImageIndex];
 
   return (
-    <div className="text-white bg-white w-full h-[600px] px-4 2xl:px-[4rem] desktop:px-[16rem]">
+    <div className="text-white bg-white w-full md:h-[600px] px-4 2xl:px-[4rem] desktop:px-[16rem]">
       {/* Background Image Carousel */}
       <div
-        className="h-[600px] bg-cover bg-center relative"
+        className="h-[240px] md:h-[600px] bg-cover bg-center relative"
         style={{
           backgroundImage: `url(${image})`,
         }}
@@ -75,15 +75,15 @@ const Hero = () => {
         </button>
       </div>
 
-      <div className="absolute top-[40rem] 2xl:bottom-4 desktop:top-[38rem] w-[97.5%] 2xl:w-[92%] desktop:w-[73.5%] px-[50px] lg:tracking-[1px]">
-        <div className="flex justify-between items-end">
-          <div className="uppercase font-normal leading-[40px] lg:leading-[50px]">
-            <span className="text-[22px] lg:text-[32px]">{year}</span>
-            <h3 className="text-[42px] lg:text-[56px] font-extrabold">{name}</h3>
-            <span className="text-[14px] lg:text-[16px]">{model}</span>
+      <div className="text-black md:text-white mt-4 md:mt-0 md:absolute top-[40rem] 2xl:bottom-4 desktop:top-[38rem] w-[97.5%] 2xl:w-[92%] desktop:w-[73.5%] md:px-[50px] lg:tracking-[1px]">
+        <div className="flex justify-between items-center md:items-end">
+          <div className="font-normal leading-[30px] md:leading-[40px] lg:leading-[50px]">
+            <span className="text-[16px] md:text-[24px] lg:text-[32px]">{year}</span>
+            <h3 className="text-[24px] md:text-[40px] lg:text-[54px] font-bold">{name}</h3>
+            <span className="text-[16px]">{model}</span>
           </div>
           <div>
-            <button className="bg-[#f0f0f0] text-[#656565] text-[16px] px-[35px] py-[16px]">
+            <button className="bg-[#f0f0f0] text-[#656565] text-[16px] px-4 py-2 lg:px-[35px] lg:py-[16px]">
               BID NOW
             </button>
           </div>
@@ -91,7 +91,7 @@ const Hero = () => {
       </div>
 
       {/* Slide Indicators */}
-      <div className="absolute top-[47.5rem] lg:top-[49.5rem] 2xl:bottom-0 desktop:top-[48rem] px-[50px]">
+      <div className="hidden md:block absolute top-[47.5rem] lg:top-[49.5rem] 2xl:bottom-0 desktop:top-[48rem] px-[50px]">
         <div className="flex justify-center mt-4">
           {carData.map((_, index) => (
             <span

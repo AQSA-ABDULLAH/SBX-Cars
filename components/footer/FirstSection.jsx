@@ -37,20 +37,20 @@ function FirstSection() {
 
   return (
     <div className="flex pb-4 sm:pb-5 md:pb-0">
-      <div className="wrapper">
+      <div className="flex flex-col md:flex-row justify-between items-center w-full xl:flex-col">
         {/* Logo */}
         <a href="/" className="font-semibold text-[#101010]">
           <div className="image-wrapper logo">
             <img
               src="/assets/logo.svg"
               alt="SBX Cars"
-              className="h-[46px] w-auto"
+              className="h-[40px] sm:h-[72px] xl:h-[46px] w-auto"
             />
           </div>
         </a>
 
         {/* Social Media Links */}
-        <div className="flex mt-8 gap-6 justify-center items-center w-full">
+        <div className="flex md:max-xl:justify-end mt-8 gap-6 justify-center items-center w-full">
           {socialLinks.map(({ href, src, alt }) => (
             <a
               key={href}
@@ -59,8 +59,8 @@ function FirstSection() {
               rel="noopener noreferrer"
               className="cursor-pointer no-underline font-semibold text-[#101010]"
             >
-              <div className="w-6 grayscale opacity-30 hover:opacity-100">
-                <Image src={src} alt={alt} width={30} height={30} />
+              <div className="grayscale opacity-30 hover:opacity-100 w-5 h-5 sm:w-8 sm:h-8 xl:w-6 xl:h-6">
+                <Image src={src} alt={alt} width={40} height={40} />
               </div>
             </a>
           ))}
@@ -71,4 +71,3 @@ function FirstSection() {
 }
 
 export default FirstSection;
-

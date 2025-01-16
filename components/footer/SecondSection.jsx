@@ -32,14 +32,14 @@ function SecondSection() {
 
   return (
     <div>
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col space-y-10 lg:flex-row justify-between items-center">
         {/* First Section */}
-        <div className="w-1/2">
+        <div className="w-[100%] lg:w-[50%]">
           <NewsletterForm />
         </div>
 
         {/* Second Section */}
-        <div className="w-1/2">
+        <div className="w-[100%] lg:w-[50%] max-lg:pl-6">
           <div className="flex">
             {/* First Column */}
             <div className="w-1/2">

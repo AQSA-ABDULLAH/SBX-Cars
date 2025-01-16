@@ -9,7 +9,7 @@ const cars = [
     carYear: "2022",
     carDetails: "Sport 420 Final Edition",
     reserved: 1,
-    favorite: 43
+    favorite: 43,
   },
   {
     imageUrl:
@@ -18,7 +18,7 @@ const cars = [
     carYear: "2021",
     carDetails: "Turbo S",
     reserved: 0,
-    favorite: 87
+    favorite: 87,
   },
   {
     imageUrl:
@@ -27,7 +27,7 @@ const cars = [
     carYear: "2020",
     carDetails: "Tributo",
     reserved: 0,
-    favorite: 48
+    favorite: 48,
   },
   {
     imageUrl:
@@ -36,14 +36,14 @@ const cars = [
     carYear: "2019",
     carDetails: "Evo AWD",
     reserved: 1,
-    favorite: 23
+    favorite: 23,
   },
 ];
 
 function Main() {
   return (
     <div className="py-20 2xl:px-[4rem] desktop:px-[16rem]">
-      <section className="grid grid-cols-3 gap-8 row-gap-4 px-8">
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 row-gap-4 px-4 sm:px-8">
         {cars.map((car, index) => (
           <Card
             key={index}

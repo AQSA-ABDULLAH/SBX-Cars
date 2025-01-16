@@ -30,12 +30,12 @@ function NewsletterForm() {
       </p>
 
       <div>
-        <div className="form-floating flex items-center relative gap-[1rem] tracking-[1px]">
+        <div className="flex flex-col sm:flex-row items-center relative gap-[1rem] tracking-[1px]">
           <div className="">
             <input
               type="email"
               id="newsletter"
-              className="py-[16px] px-[14px] border border-[#ddd] color-[#101010] font-[1rem] focus:outline-none focus:bg-[#efefef] focus:border-[#8f8e8e]"
+              className="py-[16px] px-[14px] max-xl:w-[20rem] border border-[#ddd] color-[#101010] font-[1rem] focus:outline-none focus:bg-[#efefef] focus:border-[#8f8e8e]"
               placeholder="Email Address"
               required
               value={email}

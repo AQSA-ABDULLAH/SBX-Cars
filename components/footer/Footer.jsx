@@ -6,13 +6,13 @@ function Footer() {
   return (
     <div className="2xl:px-[4rem] desktop:px-[16rem] mt-[-1px] bg-white border-t border-solid border-[#efefef]">
       <section className="py-[50px] px-[20px] ">
-        <div className="flex flex-row justify-between items-center">
-          <div className="w-[25%]">
+        <div className="flex flex-col xl:flex-row space-y-10 xl:space-y-0 justify-between items-center">
+          <div className="w-[100%] xl:w-[25%]">
             <FirstSection />
           </div>
 
           {/* SECOND SECTION */}
-          <div className="w-[75%]">
+          <div className="w-[100%] xl:w-[75%]">
             <SecondSection />
           </div>
         </div>
