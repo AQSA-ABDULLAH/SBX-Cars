@@ -9,10 +9,10 @@ const Card = ({
   carDetails,
   reserved,
   favorite,
+  auctions,
 }) => {
   return (
     <div className="relative overflow-hidden">
-      {/* Car Image and Link */}
       <a
         href="/listing/217/2022-lotus-exige-sport-420-final-edition"
         className="block"
@@ -23,11 +23,8 @@ const Card = ({
             alt={`${carName} Thumbnail`}
             className="w-full h-auto object-cover"
           />
-
-          {/* Top Section: Reserve and Favorite */}
           <div className="absolute top-2 p-4 w-[100%]">
             <div className="flex justify-between items-center">
-              {/* Conditional Rendering for Reserve Lowered */}
               {reserved === 1 ? (
                 <div className="bg-gray-800 text-black pl-2 py-1">
                   <span className="bg-white px-2 py-2 text-sm">
@@ -37,8 +34,6 @@ const Card = ({
               ) : (
                 <span></span>
               )}
-
-              {/* Favorite Count */}
               <div className="bg-gray-800 text-black px-2 py-2 rounded-3xl">
                 <div className="flex items-center space-x-2">
                   <span className="">
@@ -51,7 +46,6 @@ const Card = ({
           </div>
         </div>
 
-        {/* Car Details */}
         <div className="absolute bottom-20 p-4 w-[100%]">
           <div className="flex justify-between items-center">
             <div>
@@ -59,27 +53,16 @@ const Card = ({
               <h3 className="text-xl font-bold">{carName}</h3>
               <span className="text-sm text-gray-500">{carDetails}</span>
             </div>
-            <div>
-              <span className="text-sm font-semibold text-end">
-                <p>Abu Dhabi</p>
-                <p>United Arab</p>
-                <p>Emirates</p>
-              </span>
+            <div className="text-sm font-semibold text-end">
+              {/* Map over auction values */}
+              {Object.values(auctions).map((location, idx) => (
+                <p key={idx}>{location}</p>
+              ))}
             </div>
           </div>
         </div>
-        {/* <div className="absolute bottom-20 p-4 w-[100%]">
-          <div className="flex justify-between items-center">
-            <div>
-              <span className="text-sm text-gray-500">{carYear}</span>
-              <h3 className="text-xl font-bold">{carName}</h3>
-              <span className="text-sm text-gray-500">{carDetails}</span>
-            </div>
-          </div>
-        </div> */}
       </a>
 
-      {/* Car Content - Price and Time */}
       <div className="px-4 py-4 flex justify-between items-center">
         <div className="text-sm font-semibold text-gray-800">
           <label className="block text-gray-500">Latest bid</label>
@@ -95,6 +78,7 @@ const Card = ({
 };
 
 export default Card;
+
 
 // import React from "react";
 // import Timer from "./Timer";
