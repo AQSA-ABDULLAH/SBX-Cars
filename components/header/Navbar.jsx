@@ -19,43 +19,43 @@ const Navbar = () => {
       <nav className="font-[16px] px-[16px] py-[20px] grid grid-cols-[repeat(3,_minmax(0,_1fr))] gap-4 justify-center items-center relative w-full transition-all duration-300">
         {/* Mobile Menu Button */}
         <div>
-        <div
-          className="mobile-nav-button"
-          data-testid="mobile-nav-option-wrapper"
-          onClick={toggleMobileMenu}
-        >
-          <input
-            type="checkbox"
-            data-testid="mobile-nav-option"
-            className="hidden"
-            checked={isChecked}
-            onChange={() => setIsChecked(!isChecked)}
-          />
-          <span
-            className={`line-one block w-6 h-0.5 bg-black my-1 transition-transform duration-300 ${
-              isChecked ? "rotate-45 translate-y-2" : ""
-            }`}
-          ></span>
-          <span
-            className={`line-two block w-6 h-0.5 bg-black my-1 transition-opacity duration-300 ${
-              isChecked ? "opacity-0" : "opacity-100"
-            }`}
-          ></span>
-          <span
-            className={`line-three block w-6 h-0.5 bg-black my-1 transition-transform duration-300 ${
-              isChecked ? "-rotate-45 -translate-y-2" : ""
-            }`}
-          ></span>
-        </div>
-         {/* Sidebar */}
-      {isMobileMenuOpen && (
-        <div className="absolute bg-gray mt inset-0 z-50">
-          <div className=" h-full w-[300px] bg-white shadow-xl p-4">
-            <Sidebar />
+          <div
+            className="mobile-nav-button"
+            data-testid="mobile-nav-option-wrapper"
+            onClick={toggleMobileMenu}
+          >
+            <input
+              type="checkbox"
+              data-testid="mobile-nav-option"
+              className="hidden"
+              checked={isChecked}
+              onChange={() => setIsChecked(!isChecked)}
+            />
+            <span
+              className={`line-one block w-6 h-0.5 bg-black my-1 transition-transform duration-300 ${
+                isChecked ? "rotate-45 translate-y-2" : ""
+              }`}
+            ></span>
+            <span
+              className={`line-two block w-6 h-0.5 bg-black my-1 transition-opacity duration-300 ${
+                isChecked ? "opacity-0" : "opacity-100"
+              }`}
+            ></span>
+            <span
+              className={`line-three block w-6 h-0.5 bg-black my-1 transition-transform duration-300 ${
+                isChecked ? "-rotate-45 -translate-y-2" : ""
+              }`}
+            ></span>
           </div>
+          {/* Sidebar */}
+          {isMobileMenuOpen && (
+            <div className="absolute h-[100%] bg-gray mt-[90px] inset-0 z-50">
+              <div className=" w-[300px] bg-white shadow-xl p-4">
+                <Sidebar />
+              </div>
+            </div>
+          )}
         </div>
-      )}
-      </div>
 
         {/* Logo */}
         <div className="flex justify-center flex-grow">
@@ -114,11 +114,8 @@ const Navbar = () => {
           </div>
         </section>
       </nav>
-
-     
     </>
   );
 };
 
 export default Navbar;
-

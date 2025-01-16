@@ -6,15 +6,18 @@ const links = [
   { href: "/auctions", label: "Auctions" },
   { href: "/preview", label: "Preview" },
   { href: "/results", label: "Results" },
-  { href: "/sell-your-vehicle", label: "Sell" },
-  { href: "/faq", label: "FAQ" },
-  { href: "/about-us", label: "About" },
+  { href: "/sell-your-vehicle", label: "Sell Your Vehicle" },
+  { href: "/about-us", label: "About Us" },
+  { href: "/team", label: "Team" },
+  { href: "/press", label: "Press" },
+  { href: "/career", label: "Careers" },
+  { href: "/faq", label: "Contact Us" }
 ];
 
 
 function Sidebar() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col space-y-8">
        {links.map((link) => (
         <Link
           key={link.href}
