@@ -4,7 +4,7 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 const PromotionSection = () => {
   return (
     <div>
-      <section className="px-4 py-2 flex items-center bg-[#ad9d6f] text-white font-medium min-h-[36px]">
+      <section className="px-4 py-2 flex items-center bg-[#ad9d6f] text-white font-medium min-h-[36px] tracking-wide">
         <div className="flex flex-1 justify-center align-center">
           <a
             className="promotion-link flex items-center space-x-2"

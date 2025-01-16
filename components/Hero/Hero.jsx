@@ -51,10 +51,10 @@ const Hero = () => {
   const { image, year, name, model } = carData[currentImageIndex];
 
   return (
-    <div className="text-white bg-white w-full px-4 2xl:px-[8rem] desktop:px-[16rem]">
+    <div className="text-white bg-white w-full px-4 2xl:px-[4rem] desktop:px-[16rem]">
       {/* Background Image Carousel */}
       <div
-        className="h-[460px] 2xl:h-[560px] desktop:h-[600px] bg-cover bg-center relative"
+        className="h-[460px] 2xl:h-[600px] bg-cover bg-center relative"
         style={{
           backgroundImage: `url(${image})`,
         }}
@@ -64,26 +64,26 @@ const Hero = () => {
       </div>
 
       {/* Navigation Buttons */}
-      <div className="absolute bottom-[12rem] left-16 transform -translate-y-1/2">
+      <div className="absolute bottom-[12rem] desktop:top-[46rem] left-16 desktop:left-[20rem] transform -translate-y-1/2">
         <button className="rounded-full text-white" onClick={prevImage}>
           <img src="/assets/Path2.png" alt="previous-button" />
         </button>
       </div>
-      <div className="absolute bottom-[12rem] right-16 transform -translate-y-1/2">
+      <div className="absolute bottom-[12rem] desktop:top-[46rem] right-16 desktop:right-[20rem] transform -translate-y-1/2">
         <button className="rounded-full text-white" onClick={nextImage}>
           <img src="/assets/Path1.png" alt="next-button" />
         </button>
       </div>
 
-      <div className="absolute bottom-8 w-[97.5%] px-[50px]">
+      <div className="absolute bottom-8 desktop:top-[38rem] w-[97.5%] desktop:w-[73.5%] px-[50px] tracking-[1px]">
         <div className="flex justify-between items-end">
-          <div className="text-[#FFFFFFB3] uppercase font-400 leading-[40px]">
-            <span className="text-[28px]">{year}</span>
-            <h3 className="text-[40px]">{name}</h3>
+          <div className="uppercase font-normal leading-[40px] desktop:leading-[50px]">
+            <span className="text-[32px]">{year}</span>
+            <h3 className="text-[56px] font-extrabold">{name}</h3>
             <span className="text-[16px]">{model}</span>
           </div>
           <div>
-            <button className="bg-[#f0f0f0] text-[#656565] px-[35px] py-[16px]">
+            <button className="bg-[#f0f0f0] text-[#656565] text-[16px] px-[35px] py-[16px]">
               BID NOW
             </button>
           </div>
@@ -91,7 +91,7 @@ const Hero = () => {
       </div>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-1 px-[50px]">
+      <div className="absolute bottom-1 desktop:top-[48rem] px-[50px]">
         <div className="flex justify-center mt-4">
           {carData.map((_, index) => (
             <span

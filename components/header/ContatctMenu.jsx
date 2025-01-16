@@ -4,40 +4,40 @@ import React from "react";
 
 const ContactMenu = () => {
   return (
-    <div className="flex flex-col space-y-4 md:flex-row md:space-x-8 md:space-y-0 md:items-center bg-[#EDEDED] h-[34px] px-4 2xl:px-[9rem] desktop:px-[16rem]">
+    <div className="flex flex-row lg:space-x-3 max-md:justify-between items-center bg-[#EDEDED] text-[#101010] font-semibold text-[14px] tracking-wide h-[34px] px-4 2xl:px-[4rem] desktop:px-[16rem]">
       {/* US Phone */}
-      <div className="phone">
-        <a href="tel:+13234078523" className="text-gray-800 hover:text-blue-500">
-          <span className="font-semibold">US</span> +1 323-407-8523
+      <div>
+        <a href="#" className="flex gap-1">
+          <span className="hidden lg:block">US</span> +1 323-407-8523
         </a>
       </div>
       
       {/* Divider */}
-      <div className="divider hidden md:block border-l-2 border-gray-300 h-8"></div>
+      <div className="border-l-2 border-gray-300 h-6"></div>
 
       {/* UAE Phone */}
-      <div className="phone">
-        <a href="tel:+97148761764" className="text-gray-800 hover:text-blue-500">
-          <span className="font-semibold">UAE</span> +971 4 876 1764
+      <div>
+        <a href="#" className="flex gap-1">
+          <span className="hidden lg:block">UAE</span> +971 4 876 1764
         </a>
       </div>
       
       {/* Divider */}
-      <div className="divider hidden md:block border-l-2 border-gray-300 h-8"></div>
+      <div className="border-l-2 border-gray-300 h-6"></div>
 
       {/* UK Phone (only shown on larger screens) */}
-      <div className="phone hidden md:block">
-        <a href="tel:+442045258014" className="text-gray-800 hover:text-blue-500">
-          <span className="font-semibold">UK</span> +44 20 4525 8014
+      <div>
+        <a href="#" className="flex gap-1">
+          <span className="hidden lg:block">UK</span> +44 20 4525 8014
         </a>
       </div>
 
       {/* Divider (hidden on smaller screens) */}
-      <div className="divider hidden md:block border-l-2 border-gray-300 h-8"></div>
+      <div className="border-l-2 border-gray-300 h-6"></div>
 
       {/* Email */}
-      <div className="email">
-        <a href="mailto:sales@sbxcars.com" className="text-gray-800 hover:text-blue-500">
+      <div className="hidden lg:block text-[16px]">
+        <a href="mailto:sales@sbxcars.com">
           sales@sbxcars.com
         </a>
       </div>

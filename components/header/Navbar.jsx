@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="font-[16px] px-[16px] py-[20px] 2xl:px-[9rem] desktop:px-[16rem] grid grid-cols-[repeat(3,_minmax(0,_1fr))] gap-4 justify-center items-center relative w-full transition-all duration-300">
+      <nav className="font-[16px] px-[16px] py-[20px] 2xl:px-[4rem] desktop:px-[16rem] grid grid-cols-[repeat(3,_minmax(0,_1fr))] gap-4 justify-center items-center relative w-full transition-all duration-300">
         {/* Mobile Menu Button */}
         <div>
           <div
