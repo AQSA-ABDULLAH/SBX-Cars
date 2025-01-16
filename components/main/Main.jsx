@@ -42,7 +42,7 @@ const cars = [
 
 function Main() {
   return (
-    <div className="py-20">
+    <div className="py-20 desktop:px-[16rem]">
       <section className="grid grid-cols-3 gap-8 row-gap-4 px-8">
         {cars.map((car, index) => (
           <Card

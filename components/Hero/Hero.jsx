@@ -51,10 +51,10 @@ const Hero = () => {
   const { image, year, name, model } = carData[currentImageIndex];
 
   return (
-    <div className="text-white bg-white w-full px-4">
+    <div className="text-white bg-white w-full px-4 2xl:px-[8rem] desktop:px-[16rem]">
       {/* Background Image Carousel */}
       <div
-        className="h-[460px] bg-cover bg-center relative"
+        className="h-[460px] 2xl:h-[560px] desktop:h-[600px] bg-cover bg-center relative"
         style={{
           backgroundImage: `url(${image})`,
         }}

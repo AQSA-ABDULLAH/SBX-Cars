@@ -11,6 +11,9 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      screens: {
+        'desktop': '1920px'
+      },
     },
   },
   plugins: [],

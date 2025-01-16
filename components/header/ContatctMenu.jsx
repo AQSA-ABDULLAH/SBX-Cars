@@ -4,7 +4,7 @@ import React from "react";
 
 const ContactMenu = () => {
   return (
-    <div className="flex flex-col space-y-4 md:flex-row md:space-x-8 md:space-y-0 md:items-center bg-[#EDEDED] h-[34px] px-4">
+    <div className="flex flex-col space-y-4 md:flex-row md:space-x-8 md:space-y-0 md:items-center bg-[#EDEDED] h-[34px] px-4 2xl:px-[9rem] desktop:px-[16rem]">
       {/* US Phone */}
       <div className="phone">
         <a href="tel:+13234078523" className="text-gray-800 hover:text-blue-500">
