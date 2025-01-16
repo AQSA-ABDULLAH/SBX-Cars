@@ -13,12 +13,12 @@ const links = [
 
 function BottomNavbar() {
   return (
-    <section className="hidden md:flex flex-row items-center justify-center my-6 space-x-4 md:space-x-12">
+    <section className="flex flex-row items-center justify-center my-6 space-x-6 md:space-x-12">
       {links.map((link) => (
         <Link
           key={link.href}
           href={link.href}
-          className="text-gray-800 hover:text-blue-500 font-medium text-lg"
+          className="text-gray-800 hover:text-blue-500 font-medium text-[12px] md:text-[16px]"
         >
           {link.label}
         </Link>

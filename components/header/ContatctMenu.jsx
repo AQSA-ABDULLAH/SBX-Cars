@@ -4,7 +4,7 @@ import React from "react";
 
 const ContactMenu = () => {
   return (
-    <div className="flex flex-row lg:space-x-3 max-md:justify-between items-center bg-[#EDEDED] text-[#101010] font-semibold text-[14px] tracking-wide h-[34px] px-4 2xl:px-[4rem] desktop:px-[16rem]">
+    <div className="flex flex-row lg:space-x-3 max-lg:justify-between items-center bg-[#EDEDED] text-[#101010] font-semibold text-[12px] 2xl:text-[14px] tracking-wide h-[34px] px-4 2xl:px-[4rem] desktop:px-[16rem]">
       {/* US Phone */}
       <div>
         <a href="#" className="flex gap-1">
@@ -33,10 +33,10 @@ const ContactMenu = () => {
       </div>
 
       {/* Divider (hidden on smaller screens) */}
-      <div className="border-l-2 border-gray-300 h-6"></div>
+      <div className="hidden lg:block border-l-2 border-gray-300 h-6"></div>
 
       {/* Email */}
-      <div className="hidden lg:block text-[16px]">
+      <div className="hidden lg:block text-[14px] 2xl:text-[16px]">
         <a href="mailto:sales@sbxcars.com">
           sales@sbxcars.com
         </a>

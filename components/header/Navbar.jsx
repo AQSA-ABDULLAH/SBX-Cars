@@ -66,7 +66,7 @@ const Navbar = () => {
 
         <section className="flex justify-end gap-3 items-center">
           {/* Desktop Search Button */}
-          <div className="search-desktop-button">
+          <div className="hidden lg:block search-desktop-button">
             <button type="button" className="base-button icon p-0">
               <div className="image-wrapper">
                 <CiSearch />
@@ -75,20 +75,20 @@ const Navbar = () => {
           </div>
 
           {/* Desktop User Content */}
-          <div className="user-content desktop hidden lg:flex">
-            <div className="user-item">
+
+            <div className="hidden lg:block">
               <button
                 data-testid="sign-in-button-nav-menu"
                 type="button"
-                className="base-button dark sign-in"
+                className="hidden lg:block sign-in"
               >
                 Sign in
               </button>
             </div>
-          </div>
+          
 
           {/* Mobile Navigation */}
-          <div className="nav-mobile flex lg:hidden">
+          <div className="nav-mobile flex gap-4 lg:hidden">
             {/* Mobile Search Button */}
             <div className="search-mobile-button">
               <button type="button" className="base-button icon ml-0">
@@ -108,7 +108,6 @@ const Navbar = () => {
                 <div className="image-wrapper">
                   <AiOutlineUser />
                 </div>
-                <span>Sign in</span>
               </button>
             </div>
           </div>
