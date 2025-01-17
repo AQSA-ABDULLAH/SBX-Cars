@@ -1,29 +1,31 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import NewsletterForm from "./NewsletterSection";
 
-const links1 = [
-  { href: "/", label: "Auctions" },
-  { href: "/brands", label: "Brands" },
-  { href: "/sell-your-vehicle", label: "Sell your vehicle" },
-  { href: "/faq", label: "FAQ" },
-  { href: "/contact-us", label: "Contact us" },
-  { href: "/results", label: "Auction Results" },
-];
-
-const links2 = [
-  { href: "/about-us", label: "About us" },
-  { href: "/team", label: "Team" },
-  { href: "/careers", label: "Careers" },
-  { href: "/terms-of-service", label: "Terms of use" },
-  { href: "/privacy-policy", label: "Privacy policy" },
-  { href: "/cookie-declaration", label: "Cookie declaration" },
-];
-
 function SecondSection() {
+  const [linksData, setLinksData] = useState({ links1: [], links2: [] });
+
+  useEffect(() => {
+    const fetchLinks = async () => {
+      try {
+        const response = await fetch("/footerLinks.json");
+        if (!response.ok) {
+          throw new Error("Failed to fetch links");
+        }
+        const data = await response.json();
+        setLinksData(data);
+      } catch (error) {
+        console.error("Failed to load footer links:", error);
+      }
+    };
+
+    fetchLinks();
+  }, []);
+
   const renderLinks = (links) =>
     links.map(({ href, label }) => (
-      <li key={href} className="">
+      <li key={href}>
         <Link href={href} className="hover:text-[#2b2a2a]">
           {label}
         </Link>
@@ -44,14 +46,14 @@ function SecondSection() {
             {/* First Column */}
             <div className="w-1/2">
               <ul className="space-y-[7px] text-[#515151] list-disc">
-                {renderLinks(links1)}
+                {renderLinks(linksData.links1)}
               </ul>
             </div>
 
             {/* Second Column */}
             <div className="w-1/2">
               <ul className="space-y-[7px] text-[#515151] list-disc">
-                {renderLinks(links2)}
+                {renderLinks(linksData.links2)}
               </ul>
             </div>
           </div>
@@ -62,4 +64,5 @@ function SecondSection() {
 }
 
 export default SecondSection;
+
 

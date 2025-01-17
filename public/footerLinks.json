@@ -1,0 +1,19 @@
+{
+    "links1": [
+      { "href": "/", "label": "Auctions" },
+      { "href": "/brands", "label": "Brands" },
+      { "href": "/sell-your-vehicle", "label": "Sell your vehicle" },
+      { "href": "/faq", "label": "FAQ" },
+      { "href": "/contact-us", "label": "Contact us" },
+      { "href": "/results", "label": "Auction Results" }
+    ],
+    "links2": [
+      { "href": "/about-us", "label": "About us" },
+      { "href": "/team", "label": "Team" },
+      { "href": "/careers", "label": "Careers" },
+      { "href": "/terms-of-service", "label": "Terms of use" },
+      { "href": "/privacy-policy", "label": "Privacy policy" },
+      { "href": "/cookie-declaration", "label": "Cookie declaration" }
+    ]
+  }
+  
