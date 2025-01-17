@@ -1,0 +1,9 @@
+[
+    { "href": "/auctions", "label": "Auctions" },
+    { "href": "/preview", "label": "Preview" },
+    { "href": "/results", "label": "Results" },
+    { "href": "/sell-your-vehicle", "label": "Sell" },
+    { "href": "/faq", "label": "FAQ" },
+    { "href": "/about-us", "label": "About" }
+  ]
+  

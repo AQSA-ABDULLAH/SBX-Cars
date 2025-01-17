@@ -1,17 +1,24 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
-const links = [
-  { href: "/auctions", label: "Auctions" },
-  { href: "/preview", label: "Preview" },
-  { href: "/results", label: "Results" },
-  { href: "/sell-your-vehicle", label: "Sell" },
-  { href: "/faq", label: "FAQ" },
-  { href: "/about-us", label: "About" },
-];
-
 function BottomNavbar() {
+  const [links, setLinks] = useState([]);
+
+  useEffect(() => {
+    const fetchLinks = async () => {
+      try {
+        const response = await fetch("/links.json");
+        const data = await response.json();
+        setLinks(data);
+      } catch (error) {
+        console.error("Failed to load links:", error);
+      }
+    };
+
+    fetchLinks();
+  }, []);
+
   return (
     <section className="flex flex-row items-center justify-center my-6 space-x-6 md:space-x-12">
       {links.map((link) => (
@@ -28,3 +35,4 @@ function BottomNavbar() {
 }
 
 export default BottomNavbar;
+
