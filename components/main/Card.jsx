@@ -68,14 +68,14 @@ const Card = ({
         </div>
       </a>
 
-      <div className="px-4 py-4 flex justify-between items-center">
-        <div className="text-sm font-semibold text-gray-800">
-          <label className="block text-gray-500">Latest bid</label>
-          <span className="block text-lg text-gray-900">{carPrice}</span>
+      <div className="px-4 py-4 flex justify-between items-center tracking-wide">
+        <div className="text-[16px] flex flex-col gap-[1px]">
+          <label className="text-[#A1A1A1]">Latest bid</label>
+          <span className="text-[22px] text-[#101010] font-bold">{carPrice}</span>
         </div>
-        <div className="text-sm font-semibold text-gray-800">
-          <label className="block text-gray-500">Time left</label>
-          <Timer bidEndTime={bidEndTime} /> {/* Pass bidEndTime */}
+        <div className="text-[16px] flex flex-col gap-[1px]">
+          <label className="text-[#A1A1A1]">Time left</label>
+          <Timer bidEndTime={bidEndTime} />
         </div>
       </div>
     </div>

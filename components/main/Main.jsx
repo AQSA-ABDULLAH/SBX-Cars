@@ -16,7 +16,7 @@ const cars = [
   },
   {
     imageUrl:
-      "https://i.sbxcars.com/cdn-cgi/image/width=900,height=1352,quality=80,format=webp,fit=cover/auctions/e293e549-fd95-4122-9fcf-741b8faec9ec/DSC_3447.jpg",
+      "https://i.sbxcars.com/cdn-cgi/image/width=900,height=1352,quality=80,format=webp,fit=cover/auctions/a547a6b6-3704-49d8-83e7-4558ebffa398/Car%20card.jpg",
     carName: "Porsche 911",
     carYear: "2021",
     carDetails: "Turbo S",
@@ -41,6 +41,54 @@ const cars = [
   {
     imageUrl:
       "https://i.sbxcars.com/cdn-cgi/image/width=900,height=1352,quality=80,format=webp,fit=cover/auctions/e293e549-fd95-4122-9fcf-741b8faec9ec/DSC_3447.jpg",
+    carName: "Lamborghini Huracan",
+    carYear: "2019",
+    carDetails: "Evo AWD",
+    reserved: 1,
+    favorite: 23,
+    Auctions: { location1: "USA", location2: "Emirates" },
+    carPrice: "€350,000",
+    bidEndTime: "2025-01-29T18:45:00", // Another dynamic end time
+  },
+  {
+    imageUrl:
+      "https://i.sbxcars.com/cdn-cgi/image/width=900,height=1352,quality=80,format=webp,fit=cover/auctions/e293e549-fd95-4122-9fcf-741b8faec9ec/DSC_3447.jpg",
+    carName: "Lotus Exige",
+    carYear: "2022",
+    carDetails: "Sport 420 Final Edition",
+    reserved: 1,
+    favorite: 43,
+    Auctions: { location1: "Abu Dhabi", location2: "United Arab Emirates" },
+    carPrice: "US$200,000",
+    bidEndTime: "2025-01-31T23:59:59", // Dynamic end time for the bid
+  },
+  {
+    imageUrl:
+      "https://i.sbxcars.com/cdn-cgi/image/width=900,height=1352,quality=80,format=webp,fit=cover/auctions/e293e549-fd95-4122-9fcf-741b8faec9ec/DSC_3447.jpg",
+    carName: "Porsche 911",
+    carYear: "2021",
+    carDetails: "Turbo S",
+    reserved: 0,
+    favorite: 87,
+    Auctions: { location1: "Abu Dhabi", location2: "United Arab", location3: "London" },
+    carPrice: "25,000 AED",
+    bidEndTime: "2025-01-30T20:00:00", // Another dynamic end time
+  },
+  {
+    imageUrl:
+      "https://i.sbxcars.com/cdn-cgi/image/width=900,height=1352,quality=80,format=webp,fit=cover/auctions/e293e549-fd95-4122-9fcf-741b8faec9ec/DSC_3447.jpg",
+    carName: "Ferrari F8",
+    carYear: "2020",
+    carDetails: "Tributo",
+    reserved: 0,
+    favorite: 48,
+    Auctions: { location1: "Abu Dhabi", location2: "United Arab" },
+    carPrice: "US$55,000",
+    bidEndTime: "2025-01-17T15:30:00", // Another dynamic end time
+  },
+  {
+    imageUrl:
+      "https://i.sbxcars.com/cdn-cgi/image/width=900,height=1352,quality=80,format=webp,fit=cover/auctions/a547a6b6-3704-49d8-83e7-4558ebffa398/Car%20card.jpg",
     carName: "Lamborghini Huracan",
     carYear: "2019",
     carDetails: "Evo AWD",

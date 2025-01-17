@@ -28,9 +28,9 @@ const Timer = ({ bidEndTime }) => {
   return (
     <div>
       {days >= 1 ? ( // Show days only if 1 or more
-        <div>{days} days</div>
+        <div className="text-[#BE9B52] text-[22px] font-bold">{days} days</div>
       ) : (
-        <div>
+        <div className="text-[#992121] text-[22px] font-bold">
           {hours}:{minutes}:{seconds}
         </div>
       )}
