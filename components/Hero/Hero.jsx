@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const carData = [
   {
@@ -37,6 +37,7 @@ const carData = [
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false); // Track scroll position
 
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % carData.length);
@@ -49,6 +50,23 @@ const Hero = () => {
   };
 
   const { image, year, name, model } = carData[currentImageIndex];
+
+  // Track scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true); // Set scroll state to true when page is scrolled
+      } else {
+        setIsScrolled(false); // Reset when at the top
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div className="text-white bg-white w-full md:h-[600px] px-4 2xl:px-[4rem] desktop:px-[16rem]">
@@ -64,22 +82,35 @@ const Hero = () => {
       </div>
 
       {/* Navigation Buttons */}
-      <div className="absolute top-[30rem] 2xl:bottom-[17rem] desktop:top-[35rem] left-16 2xl:left-[7rem] desktop:left-[20rem] transform -translate-y-1/2">
+      <div className={`absolute top-[22rem] md:top-[30rem] 2xl:bottom-[40rem] desktop:top-[35rem] left-16 2xl:left-[7rem] desktop:left-[20rem] transform -translate-y-1/2  ${
+          isScrolled ? "mt-[-6rem]" : "mt-0"
+        }`}>
         <button className="rounded-full text-white" onClick={prevImage}>
           <img src="/assets/Path2.png" alt="previous-button" />
         </button>
       </div>
-      <div className="absolute top-[30rem] 2xl:bottom-[17rem] desktop:top-[35rem] right-16 2xl:right-[7rem] desktop:right-[20rem] transform -translate-y-1/2">
+      <div className={`absolute top-[22rem] md:top-[30rem] 2xl:bottom-[40rem] desktop:top-[35rem] right-16 2xl:right-[7rem] desktop:right-[20rem] transform -translate-y-1/2 ${
+          isScrolled ? "mt-[-6rem]" : "mt-0"
+        }`}>
         <button className="rounded-full text-white" onClick={nextImage}>
           <img src="/assets/Path1.png" alt="next-button" />
         </button>
       </div>
 
-      <div className="text-black md:text-white mt-4 md:mt-0 md:absolute top-[40rem] 2xl:bottom-4 desktop:top-[38rem] w-[97.5%] 2xl:w-[92%] desktop:w-[73.5%] md:px-[50px] lg:tracking-[1px]">
+      {/* Content Section */}
+      <div
+        className={`text-black md:text-white ${
+          isScrolled ? "mt-[-6rem]" : "mt-0"
+        } md:absolute top-[40rem] 2xl:bottom-4 desktop:top-[38rem] w-[97.5%] 2xl:w-[92%] desktop:w-[73.5%] md:px-[50px] lg:tracking-[1px] max-md:mt-6`}
+      >
         <div className="flex justify-between items-center md:items-end">
           <div className="font-normal leading-[30px] md:leading-[40px] lg:leading-[50px]">
-            <span className="text-[16px] md:text-[24px] lg:text-[32px]">{year}</span>
-            <h3 className="text-[24px] md:text-[40px] lg:text-[54px] font-bold">{name}</h3>
+            <span className="text-[16px] md:text-[24px] lg:text-[32px]">
+              {year}
+            </span>
+            <h3 className="text-[24px] md:text-[40px] lg:text-[54px] font-bold">
+              {name}
+            </h3>
             <span className="text-[16px]">{model}</span>
           </div>
           <div>
@@ -91,7 +122,11 @@ const Hero = () => {
       </div>
 
       {/* Slide Indicators */}
-      <div className="hidden md:block absolute top-[47.5rem] lg:top-[49.5rem] 2xl:bottom-0 desktop:top-[48rem] px-[50px]">
+      <div
+        className={`hidden md:block absolute top-[47.5rem] ${
+          isScrolled ? "mt-[-6rem]" : "mt-0"
+        } lg:top-[49.5rem] 2xl:bottom-0 desktop:top-[48rem] px-[50px]`}
+      >
         <div className="flex justify-center mt-4">
           {carData.map((_, index) => (
             <span
@@ -109,4 +144,5 @@ const Hero = () => {
 };
 
 export default Hero;
+
 
