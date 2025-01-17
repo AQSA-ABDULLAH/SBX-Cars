@@ -36,12 +36,12 @@ const Card = ({
               ) : (
                 <span></span>
               )}
-              <div className="bg-gray-800 text-black px-2 py-2 rounded-3xl">
-                <div className="flex items-center space-x-2">
+              <div className="bg-gray-800 text-black px-2 py-2 rounded-2xl">
+                <div className="flex items-center space-x-3 tracking-[1px]">
                   <span>
                     <StarIcon />
                   </span>
-                  <span className="text-white text-[15px]">{favorite}</span>
+                  <span className="text-white text-[15px] font-bold">{favorite}</span>
                 </div>
               </div>
             </div>
@@ -51,11 +51,11 @@ const Card = ({
         <div className="absolute bottom-20 p-4 w-[100%]">
           <div className="flex justify-between items-center">
             <div>
-              <span className="text-sm text-gray-500">{carYear}</span>
-              <h3 className="text-xl font-bold">{carName}</h3>
-              <span className="text-sm text-gray-500">{carDetails}</span>
+              <span className="text-[16px] text-[#FFFFFFB3]">{carYear}</span>
+              <h3 className="text-[20px] text-[#FFFFFF] font-bold">{carName}</h3>
+              <span className="text-sm text-[#FFFFFFB3]">{carDetails}</span>
             </div>
-            <div className="text-sm font-semibold text-end">
+            <div className="text-[15px] text-[#FFFFFFD9] font-normal text-end">
               {auctionLocations && auctionLocations.length > 0 ? (
                 auctionLocations.map((location, idx) => (
                   <p key={idx}>{location}</p>

@@ -7,7 +7,7 @@ const StarIcon = () => {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 763.43 728.41"
-        className="w-2 h-2 md:w-4 md:h-4"
+        className="w-2 h-2 md:w-5 md:h-5"
         role="img"
         aria-labelledby="star-title star-desc"
       >
