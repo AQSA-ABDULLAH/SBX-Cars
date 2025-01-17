@@ -12,6 +12,7 @@ const cars = [
     favorite: 43,
     Auctions: { location1: "Abu Dhabi", location2: "United Arab Emirates" },
     carPrice: "US$200,000",
+    bidEndTime: "2025-01-31T23:59:59", // Dynamic end time for the bid
   },
   {
     imageUrl:
@@ -23,6 +24,7 @@ const cars = [
     favorite: 87,
     Auctions: { location1: "Abu Dhabi", location2: "United Arab", location3: "London" },
     carPrice: "25,000 AED",
+    bidEndTime: "2025-01-30T20:00:00", // Another dynamic end time
   },
   {
     imageUrl:
@@ -34,6 +36,7 @@ const cars = [
     favorite: 48,
     Auctions: { location1: "Abu Dhabi", location2: "United Arab" },
     carPrice: "US$55,000",
+    bidEndTime: "2025-01-17T15:30:00", // Another dynamic end time
   },
   {
     imageUrl:
@@ -45,8 +48,10 @@ const cars = [
     favorite: 23,
     Auctions: { location1: "USA", location2: "Emirates" },
     carPrice: "€350,000",
+    bidEndTime: "2025-01-29T18:45:00", // Another dynamic end time
   },
 ];
+
 
 function Main() {
   return (
@@ -61,8 +66,9 @@ function Main() {
             carDetails={car.carDetails}
             reserved={car.reserved}
             favorite={car.favorite}
-            auctionLocations={car.Auctions ? Object.values(car.Auctions) : []} // Fallback to an empty array
+            auctionLocations={car.Auctions ? Object.values(car.Auctions) : []}
             carPrice={car.carPrice}
+            bidEndTime={car.bidEndTime} // Pass the bidEndTime
           />
         ))}
       </section>
@@ -71,6 +77,7 @@ function Main() {
 }
 
 export default Main;
+
 
 
 

@@ -9,8 +9,9 @@ const Card = ({
   carDetails,
   reserved,
   favorite,
-  auctionLocations, // Renamed from auctions to auctionLocations
+  auctionLocations,
   carPrice,
+  bidEndTime, // Accept bidEndTime as a prop
 }) => {
   return (
     <div className="relative overflow-hidden">
@@ -74,7 +75,7 @@ const Card = ({
         </div>
         <div className="text-sm font-semibold text-gray-800">
           <label className="block text-gray-500">Time left</label>
-          <Timer />
+          <Timer bidEndTime={bidEndTime} /> {/* Pass bidEndTime */}
         </div>
       </div>
     </div>
@@ -82,6 +83,3 @@ const Card = ({
 };
 
 export default Card;
-
-
-

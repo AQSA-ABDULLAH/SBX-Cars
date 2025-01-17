@@ -2,11 +2,11 @@
 
 import React, { useEffect, useState } from "react";
 
-const Timer = () => {
+const Timer = ({ bidEndTime }) => {
   const [timeLeft, setTimeLeft] = useState(null);
 
   useEffect(() => {
-    const targetTime = new Date("2025-01-31T23:59:59").getTime();
+    const targetTime = new Date(bidEndTime).getTime();
     const updateTimer = () => {
       const now = Date.now();
       const difference = targetTime - now;
@@ -16,7 +16,7 @@ const Timer = () => {
     updateTimer();
     const interval = setInterval(updateTimer, 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [bidEndTime]);
 
   if (timeLeft === null) return null;
 
@@ -27,12 +27,21 @@ const Timer = () => {
 
   return (
     <div>
-      {days}:{hours}:{minutes}:{seconds}
+      {days >= 1 ? ( // Show days only if 1 or more
+        <div>{days} days</div>
+      ) : (
+        <div>
+          {hours}:{minutes}:{seconds}
+        </div>
+      )}
     </div>
   );
 };
 
 export default Timer;
+
+
+
 
 
 
