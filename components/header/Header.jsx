@@ -10,7 +10,7 @@ function Header() {
         <PromotionSection />
         <ContactMenu />
         <Navbar />
-        <div className='border-b'> </div>
+        <div className='border-b mt-[-1px]'> </div>
         <BottomNavbar />
     </div>
   )

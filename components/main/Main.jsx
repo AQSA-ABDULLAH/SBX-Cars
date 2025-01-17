@@ -55,7 +55,11 @@ const cars = [
 
 function Main() {
   return (
-    <div className="py-20 2xl:px-[4rem] desktop:px-[16rem]">
+    <div className="2xl:px-[4rem] desktop:px-[16rem]">
+      <section className="flex py-10 px-4 sm:px-8">
+        <h3>AUCTIONS</h3>
+        <p>Country: <span className="underline">ALL</span> </p>
+      </section>
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 sm:px-8">
         {cars.map((car, index) => (
           <Card
